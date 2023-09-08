@@ -1,5 +1,5 @@
 import ExpenseItem  from "./components/ExpenseItem";
-
+import Card from '../src/components/Card';
 
 
 function App() {
@@ -28,7 +28,7 @@ function App() {
     },
   ];
   return (
-    <div>
+    <Card>
       <h2>Let's get started!</h2>
       {expenses.map((expense, index) => (
   <ExpenseItem
@@ -39,7 +39,7 @@ function App() {
   />
 ))}
 
-    </div>
+    </Card>
   );
 }
 
