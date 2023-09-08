@@ -1,5 +1,5 @@
 import './ExpenseItem.css';
-import Card from './Card';
+import Card from '../UI/Card';
 function ExpenseDetail(props) {
     return(
     <Card className='expense-item__description'>

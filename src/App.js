@@ -1,5 +1,5 @@
-import ExpenseItem  from "./components/ExpenseItem";
-import Card from '../src/components/Card';
+import ExpenseItem  from "./components/Expenses/ExpenseItem";
+import Card from './components/UI/Card';
 
 
 function App() {
@@ -27,6 +27,13 @@ function App() {
       location:'karolbagh'
     },
   ];
+
+   // return React.createElement(
+  //   'div',
+  //   {},
+  //   React.createElement('h2', {}, "Let's get started!"),
+  //   React.createElement(Expenses, { items: expenses })
+  // );
   return (
     <Card>
       <h2>Let's get started!</h2>
