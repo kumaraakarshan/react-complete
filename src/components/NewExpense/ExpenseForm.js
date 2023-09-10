@@ -27,28 +27,46 @@ const ExpenseForm = () => {
         
         console.log(event.target.value);
     }
-    return <form>
+
+    const submitHandler = (event) => {
+        event.preventDefault();
+        const expenseData = {
+            title: enteredTitle,
+            amount: enteredAmount,
+            date: new Date(enteredDate),
+            location: enteredLocation
+        }
+        console.log(expenseData);
+        setEnteredTitle('');
+        setEnteredAmount('');
+        setEnteredDate('');
+        setEnteredLocation('')
+    }
+    return <form onSubmit={submitHandler}>
         <div className="new-expense__controls">
             <div className="new-expense__control">
             <label>Title</label>
-            <input type='Text' onChange={titleChangeHandler} />
+                <input
+                    type='Text'
+                    value ={enteredTitle}
+                    onChange={titleChangeHandler} />
             </div>
             <div className="new-expense__control">
             <label>Amount</label>
-            <input type='number' onChange={AmountChangeHandler}/>
+                <input type='number' value={enteredAmount } onChange={AmountChangeHandler}/>
             </div>
             <div className="new-expense__control">
             <label>Date</label>
-            <input type='Date' min="2019-01-01" max="2023-09-10"  onChange={DateChangeHandler} />
+            <input type='Date' min="2019-01-01" max="2023-09-10"  value={enteredDate}  onChange={DateChangeHandler} />
             </div>
             <div className="new-expense__control">
             <label>Location</label>
-            <input type='Text' onChange={LocationChangeHandler} />
+            <input type='Text' value={enteredLocation} onChange={LocationChangeHandler} />
             </div>
 
         </div>
         <div className="new-expense__actions">
-            <button type="submit">Add Expense</button>
+            <button type="submit" >Add Expense</button>
         </div>
     </form>
     
